@@ -12,7 +12,7 @@ class Base
 
 	public function __construct($productId)
 	{
-		$this->_client = new SoapClient("https://krc5.trianglecrm.com/api/2.0/billing_ws.asmx?WSDL");
+		$this->_client = new \SoapClient("https://krc5.trianglecrm.com/api/2.0/billing_ws.asmx?WSDL");
 		$this->_productId = $productId;
 	}
 
