@@ -1,0 +1,8 @@
+{
+    "name": "theartofmedia/trianglecrm",
+    "autoload": {
+        "psr-0" : {
+            "TheArtOfMedia\\TriangleCRM" : "src"
+        }
+    }
+}
