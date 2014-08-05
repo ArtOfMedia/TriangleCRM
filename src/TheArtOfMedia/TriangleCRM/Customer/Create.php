@@ -1,15 +1,27 @@
 <?php
 
-namespace TheArtOfMedia\TriangleCRM;
+/**
+ *	This class is used to interact with the CreateProspect API for
+ *	TriangleCRM.
+ */
+namespace TheArtOfMedia\TriangleCRM\Customer;
 use TheArtOfMedia\TriangleCRM\Base as TBase;
 
-class CreateProspect extends TBase
+class Create extends TBase
 {
+	/**
+	 *	@param $productId	int	The id of the product to create the prospect ofr
+	 */
 	public function __construct($productId)
 	{
-		parent::__construct($productId);
+		parent::__construct();
 	}
 	
+	/**
+	 * Saves the prospect to the TriangleCRM database.
+	 *
+	 * @return int	The prospects id on success or -1 on failure
+	 */
 	public function save()
 	{
 		$this->_params['username'] = $this->_apiUsername;

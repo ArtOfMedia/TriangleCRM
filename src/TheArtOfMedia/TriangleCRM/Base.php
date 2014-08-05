@@ -3,17 +3,16 @@ namespace TheArtOfMedia\TriangleCRM;
 
 class Base
 {
-	private $_client;
-	private $_apiUsername = '';
-	private $_apiPassword = '';
-	private $_productId = null;
-	private $_params = [];
-	private $_errorMsg = '';
+	protected $_client;
+	protected $_apiUsername = 'krc51403';
+	protected $_apiPassword = '1UFKjGr3zq';
+	protected $_productId = null;
+	protected $_params = [];
+	protected $_errorMsg = '';
 
-	public function __construct($productId)
+	public function __construct()
 	{
 		$this->_client = new \SoapClient("https://krc5.trianglecrm.com/api/2.0/billing_ws.asmx?WSDL");
-		$this->_productId = $productId;
 	}
 
 	public function hasError()
