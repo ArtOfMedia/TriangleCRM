@@ -15,6 +15,7 @@ class Create extends TBase
 	public function __construct($productId)
 	{
 		parent::__construct();
+		$this->_productId = $productId;
 	}
 	
 	/**
@@ -27,6 +28,7 @@ class Create extends TBase
 		$this->_params['username'] = $this->_apiUsername;
 		$this->_params['password'] = $this->_apiPassword;
 		$this->_params['productTypeID'] = $this->_productId;
+
 		$results = $this->_client->CreateProspect($this->_params);
 
 		if ($results->CreateProspectResult->State !== 'Success')
@@ -36,6 +38,11 @@ class Create extends TBase
 		}
 
 		return $results->CreateProspectResult->ReturnValue->ProspectID; 
+	}
+
+	public function set($key, $value)
+	{
+		$this->_params[$key] = $value;
 	}
 
 	public function setFirstname($name)

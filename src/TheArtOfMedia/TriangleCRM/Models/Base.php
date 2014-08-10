@@ -2,14 +2,6 @@
 
 namespace TheArtOfMedia\TriangleCRM\Models;
 
-class Base
+class Base extends \Eloquent
 {
-	public function __construct()
-	{
-		\ORM::configure([
-			'connection_string' => 'mysql:host=localhost;dbname=crm',
-			'username' => 'root',
-			'password' => '0mgbbq!12'
-		]);
-	}
 }
